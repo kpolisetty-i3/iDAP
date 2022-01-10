@@ -1,0 +1,16 @@
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.exe
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.deps.json
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.runtimeconfig.json
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.runtimeconfig.dev.json
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\ref\OCDETF.iDAP.Enron.Load.Console.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.csproj.AssemblyReference.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.GeneratedMSBuildEditorConfig.editorconfig
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.AssemblyInfoInputs.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.AssemblyInfo.cs
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.csproj.CoreCompileInputs.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\ref\OCDETF.iDAP.Enron.Load.Console.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.genruntimeconfig.cache
