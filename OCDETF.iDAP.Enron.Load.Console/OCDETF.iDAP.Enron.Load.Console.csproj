@@ -5,4 +5,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OCDETF.iDAP.Azure.Services\OCDETF.iDAP.Azure.Services.csproj" />
+    <ProjectReference Include="..\OCDETF.iDAP.Core.Library\OCDETF.iDAP.Core.Library.csproj" />
+  </ItemGroup>
+
 </Project>

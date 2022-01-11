@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadCognitiveData", "LoadCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDETF.iDAP.Enron.Load.Console", "OCDETF.iDAP.Enron.Load.Console\OCDETF.iDAP.Enron.Load.Console.csproj", "{F5865623-8CA6-4123-A325-B3DF295A909D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDETF.iDAP.Azure.Functions", "OCDETF.iDAP.Azure.Functions\OCDETF.iDAP.Azure.Functions.csproj", "{EE993FF0-9CCF-468D-A3F0-B915F504FBB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDETF.iDAP.Azure.Services", "OCDETF.iDAP.Azure.Services\OCDETF.iDAP.Azure.Services.csproj", "{FBE362A6-D353-4F7C-BF82-3FE273EAAF51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDETF.iDAP.Core.Library", "OCDETF.iDAP.Core.Library\OCDETF.iDAP.Core.Library.csproj", "{5D6DC5C3-75E8-44F1-AA99-A03127514859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{F5865623-8CA6-4123-A325-B3DF295A909D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5865623-8CA6-4123-A325-B3DF295A909D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5865623-8CA6-4123-A325-B3DF295A909D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE993FF0-9CCF-468D-A3F0-B915F504FBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE993FF0-9CCF-468D-A3F0-B915F504FBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE993FF0-9CCF-468D-A3F0-B915F504FBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE993FF0-9CCF-468D-A3F0-B915F504FBB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBE362A6-D353-4F7C-BF82-3FE273EAAF51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE362A6-D353-4F7C-BF82-3FE273EAAF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE362A6-D353-4F7C-BF82-3FE273EAAF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE362A6-D353-4F7C-BF82-3FE273EAAF51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D6DC5C3-75E8-44F1-AA99-A03127514859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D6DC5C3-75E8-44F1-AA99-A03127514859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D6DC5C3-75E8-44F1-AA99-A03127514859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D6DC5C3-75E8-44F1-AA99-A03127514859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

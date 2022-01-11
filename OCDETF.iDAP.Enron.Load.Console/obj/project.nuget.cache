@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "NPywhIK5PpL7Mcc+zyfrKfIzT7kdI3lCBzB1KE7p+4UazK/hulTcw4XyVt+lErBEGn4Y0K9SMdAWmgCpdmn/MA==",
+  "dgSpecHash": "mL4TeM6HuRA09bS8H1eqRMNpsm2wxjBT2o0elFNKNGv78/ArXLFEGiJJdHWDa9dX23DYQvHH/HYFAguhLKZbxQ==",
   "success": true,
   "projectFilePath": "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Enron.Load.Console\\OCDETF.iDAP.Enron.Load.Console.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\polis\\.nuget\\packages\\azure.ai.textanalytics\\5.1.1\\azure.ai.textanalytics.5.1.1.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.core\\1.16.0\\azure.core.1.16.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.6.0\\system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512"
+  ],
   "logs": []
 }
