@@ -7,13 +7,12 @@ namespace OCDETF.iDAP.Core.Library
     {
         public CSVService() { }
 
-        public void WriteHeader(string filePath, string header)
-        {
-            File.Delete(filePath);
+        public void WriteLine(string filePath, string header)
+        {            
             using (StreamWriter sw = File.AppendText(filePath))
             {                
                 sw.WriteLine(header);
             }
-        }
+        }      
     }
 }

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZyWAp29GbShFaKguGXNSycc/6qhf6Uza6slb1apOdBVV/sPCchBe+R1iKqs1KgyDsnSogQxVkrAFnPsB0LQMkw==",
+  "success": true,
+  "projectFilePath": "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Enron.Library\\OCDETF.iDAP.Enron.Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\polis\\.nuget\\packages\\ironsnappy\\1.3.0\\ironsnappy.1.3.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\parquet.net\\3.9.1\\parquet.net.3.9.1.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

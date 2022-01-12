@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDETF.iDAP.Azure.Services"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDETF.iDAP.Core.Library", "OCDETF.iDAP.Core.Library\OCDETF.iDAP.Core.Library.csproj", "{5D6DC5C3-75E8-44F1-AA99-A03127514859}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDETF.iDAP.Enron.Library", "OCDETF.iDAP.Enron.Library\OCDETF.iDAP.Enron.Library.csproj", "{F8EDD356-845A-4BE6-9ECC-1854276174AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{5D6DC5C3-75E8-44F1-AA99-A03127514859}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D6DC5C3-75E8-44F1-AA99-A03127514859}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D6DC5C3-75E8-44F1-AA99-A03127514859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8EDD356-845A-4BE6-9ECC-1854276174AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8EDD356-845A-4BE6-9ECC-1854276174AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8EDD356-845A-4BE6-9ECC-1854276174AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8EDD356-845A-4BE6-9ECC-1854276174AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
