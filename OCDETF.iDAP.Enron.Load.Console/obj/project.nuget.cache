@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Kkux04VIMd7kaIKzleTJN3i4HkkCxSUmdArwpk/+F6Iy7EJl3JlvK/Y6zNEMBS/h4kyx8EhlaZXr8boj7sw7LA==",
+  "dgSpecHash": "56XBYn3+L9skgDNDC2W4CnFJSU2+yPLCom2MbY02IvTw+9hPT8KOusxqPsdOTZf5hM2R61I6Z2yuT1BC453gfw==",
   "success": true,
   "projectFilePath": "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Enron.Load.Console\\OCDETF.iDAP.Enron.Load.Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\polis\\.nuget\\packages\\azure.ai.textanalytics\\5.1.1\\azure.ai.textanalytics.5.1.1.nupkg.sha512",
-    "C:\\Users\\polis\\.nuget\\packages\\azure.core\\1.16.0\\azure.core.1.16.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.core\\1.19.0\\azure.core.1.19.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.storage.blobs\\12.10.0\\azure.storage.blobs.12.10.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.storage.common\\12.9.0\\azure.storage.common.12.9.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.storage.files.datalake\\12.8.0\\azure.storage.files.datalake.12.8.0.nupkg.sha512",
     "C:\\Users\\polis\\.nuget\\packages\\ironsnappy\\1.3.0\\ironsnappy.1.3.0.nupkg.sha512",
     "C:\\Users\\polis\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "C:\\Users\\polis\\.nuget\\packages\\parquet.net\\3.9.1\\parquet.net.3.9.1.nupkg.sha512",

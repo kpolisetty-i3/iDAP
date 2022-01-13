@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "LAO1H7+3AWKdCQvMv3W3HeroUi/Qk3a8PswpRYRAxn4c4GzSK52Rh6opWr/zaYWQDuqdtGGXVK93daeu2G/eJA==",
+  "dgSpecHash": "mgN5BH87rk9leS6T/d9en7IQPY7ymcBo8LO9afVRdJBE/V2i0APsi6STlcbmChalQ4aOxbyzdBxM1eVWR4SIow==",
   "success": true,
   "projectFilePath": "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Azure.Services\\OCDETF.iDAP.Azure.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\polis\\.nuget\\packages\\azure.ai.textanalytics\\5.1.1\\azure.ai.textanalytics.5.1.1.nupkg.sha512",
-    "C:\\Users\\polis\\.nuget\\packages\\azure.core\\1.16.0\\azure.core.1.16.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.core\\1.19.0\\azure.core.1.19.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.storage.blobs\\12.10.0\\azure.storage.blobs.12.10.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.storage.common\\12.9.0\\azure.storage.common.12.9.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\azure.storage.files.datalake\\12.8.0\\azure.storage.files.datalake.12.8.0.nupkg.sha512",
     "C:\\Users\\polis\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "C:\\Users\\polis\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\polis\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.6.0\\system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512",

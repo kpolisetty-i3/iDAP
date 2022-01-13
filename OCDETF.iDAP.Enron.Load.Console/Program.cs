@@ -68,7 +68,7 @@ namespace OCDETF.iDAP.Enron.Load.Console
 
             //var cityColumn = new DataColumn(new DataField<string>("city"), new string[] { "London", "Derby" });
 
-            
+
             //// create file schema
             //var schema = new Schema(idColumn.Field, cityColumn.Field);
 
@@ -85,24 +85,31 @@ namespace OCDETF.iDAP.Enron.Load.Console
             //    }
             //}
 
-            new EnronDataCSVService().Process(@"D:\Enron\2018487913\maildir", new List<string>() { "inbox", "sent" }, @"D:\Enron\Output");
+            string createFileName = string.Format("FILE-" + DateTime.Now.ToString("yyyyMMdd HHmmss").ToUpper()) + ".download";
+            //new DownloadService().Download(data.apiURL, Path.Combine(Path.GetTempPath(), createFileName));
 
-            //List<string> readFolder = new List<string>() { "inbox", "sent" };
-            //List<string> directories = Directory.GetDirectories(@"D:\Enron\maildir").ToList();
+            //new DataLakeUploadService(accountName, accountKey, serviceURI).Upload(data.appName, data.category, Path.Combine(Path.GetTempPath(), createFileName));
+            var result = new DownloadService().Download(@"https://tile.loc.gov/storage-services/master/gdc/gdcdatasets/2018487913/2018487913.zip", Path.Combine(Path.GetTempPath(), createFileName));
+            if (result)
+                new DataLakeUploadService("kpidapv2", "L56P4ZOvy5zvYKCI /gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==", "https://kpidapv2.blob.core.windows.net/").Upload("idapv2", "enron", Path.Combine(Path.GetTempPath(), createFileName));
+            //new EnronDataCSVService().Process(@"D:\Enron\2018487913\maildir", new List<string>() { "inbox", "sent" }, @"D:\Enron\Output");
 
-            //foreach (string aFolder in readFolder)
-            //    new CSVService().WriteHeader($@"D:\Enron\{aFolder}.csv", $"{"Folder"}|{MSG_ID}|{DATE_C}|{FROM}|{TO}|{SUBJECT}|{CC}|{MIME}|{CONTENT_TYPE}|{CONTENT_ENCODING}|{BCC}|{X_FROM}|{X_TO}|{X_CC}|{X_BCC}|{X_FOLDER}|{X_ORIGIN}|{X_FILE}|{PHRASES}|{ENTITIES}|{LINKED_ENTITIES}");
+                //List<string> readFolder = new List<string>() { "inbox", "sent" };
+                //List<string> directories = Directory.GetDirectories(@"D:\Enron\maildir").ToList();
 
-            //foreach (string directory in directories)
-            //{
-            //    foreach (string aFolder in readFolder)
-            //    {
-            //        if (Directory.Exists(Path.Combine(directory, aFolder)))
-            //        {
-            //            ParseDirectory(directory, aFolder);
-            //        }
-            //    }
-            //}
+                //foreach (string aFolder in readFolder)
+                //    new CSVService().WriteHeader($@"D:\Enron\{aFolder}.csv", $"{"Folder"}|{MSG_ID}|{DATE_C}|{FROM}|{TO}|{SUBJECT}|{CC}|{MIME}|{CONTENT_TYPE}|{CONTENT_ENCODING}|{BCC}|{X_FROM}|{X_TO}|{X_CC}|{X_BCC}|{X_FOLDER}|{X_ORIGIN}|{X_FILE}|{PHRASES}|{ENTITIES}|{LINKED_ENTITIES}");
+
+                //foreach (string directory in directories)
+                //{
+                //    foreach (string aFolder in readFolder)
+                //    {
+                //        if (Directory.Exists(Path.Combine(directory, aFolder)))
+                //        {
+                //            ParseDirectory(directory, aFolder);
+                //        }
+                //    }
+                //}
         }
 
 

@@ -27,3 +27,6 @@ D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\ref\OCDETF.iDAP.Enron.Load.Console.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.pdb
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\obj\Debug\net5.0\OCDETF.iDAP.Enron.Load.Console.genruntimeconfig.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\Azure.Storage.Blobs.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\Azure.Storage.Common.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\net5.0\Azure.Storage.Files.DataLake.dll

@@ -1,0 +1,8 @@
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\bin\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.deps.json
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\bin\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\bin\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.AssemblyInfoInputs.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.AssemblyInfo.cs
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.csproj.CoreCompileInputs.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.pdb

@@ -11,6 +11,8 @@ using System.Net.Http;
 using Azure.Storage.Files.DataLake;
 using Azure.Storage;
 using System.IO.Compression;
+using Azure.Storage.Files.DataLake.Models;
+using Azure;
 
 namespace OCDETF.iDAP.Azure.Functions
 {
@@ -31,62 +33,50 @@ namespace OCDETF.iDAP.Azure.Functions
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             InputParameters data = JsonConvert.DeserializeObject<InputParameters>(requestBody);
 
+            string stagingDirectory = Path.GetTempPath();
+            string zipFilePath = Path.Combine(stagingDirectory, "enron-dataset.zip");
+
             StorageSharedKeyCredential keyCredentials = new StorageSharedKeyCredential(accountName, accountKey);
             DataLakeServiceClient dataLakeServiceClient = new DataLakeServiceClient(new Uri(serviceURI), keyCredentials);
 
             var container = dataLakeServiceClient.GetFileSystemClient(data.appName.ToLower());
-
             container.CreateIfNotExists();
 
             var directory = container.GetDirectoryClient(data.category.ToLower());
             directory.CreateIfNotExists();
 
+            DataLakeFileClient fileClient = directory.GetFileClient("enron-dataset.zip");
+
+            Response<FileDownloadInfo> downloadResponse = fileClient.Read();
+
+            BinaryReader reader = new BinaryReader(downloadResponse.Value.Content);
+
+            FileStream fileStream = File.OpenWrite(zipFilePath);
+
+            int bufferSize = 4096;
+
+            byte[] buffer = new byte[bufferSize];
+            int count;
+
+            while ((count = reader.Read(buffer, 0, buffer.Length)) != 0)
+            {
+                fileStream.Write(buffer, 0, count);
+            }
+
+            await fileStream.FlushAsync();
+
+            fileStream.Close();
+
+            ZipFile.ExtractToDirectory(zipFilePath, Path.GetTempPath());
+            
+
             string responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
+                : $"Hello, {Directory.Exists(Path.Combine(Path.GetTempPath(), "2018487913", "maildir"))}. This HTTP triggered function executed successfully and unzipped.";
 
             return new OkObjectResult(responseMessage);
         }
 
-        private static async Task<string> GetEnronData(InputParameters data, DataLakeDirectoryClient directory)
-        {
-            string createFileName = string.Empty;
-            using (var httpClient = new HttpClient())
-            {
-                using (var response = await httpClient.GetAsync(data.apiURL))
-                {
-                    string stagingDirectory = Path.Combine(Path.GetTempPath(), System.Guid.NewGuid().ToString());
-                    Directory.CreateDirectory(stagingDirectory);
-                    createFileName = string.Format("File-" + DateTime.Now.ToString("yyyyMMdd HH:mm:ss")) + ".json";
-                    string fileExtension = Path.GetExtension(data.apiURL);
-
-                    if (!string.IsNullOrEmpty(fileExtension))
-                    {
-                        createFileName = Path.GetFileName(data.apiURL);
-                    }
-
-
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    File.WriteAllText(Path.Combine(stagingDirectory, createFileName), apiResponse);
-
-
-                    DataLakeFileClient fileClient = directory.GetFileClient(createFileName);
-                    fileClient.CreateIfNotExists();
-
-                    FileStream fileStream = File.OpenRead(Path.Combine(stagingDirectory, createFileName));
-                    //long fileSize = fileStream.Length;
-                    //fileClient.Append(fileStream, offset: 0);
-                    //fileClient.Flush(position: fileSize);
-
-                    ZipFile.ExtractToDirectory(createFileName, Path.GetTempPath());
-                    
-
-                    //File.Delete(localFilePathWithName);
-                }
-            }
-
-            return createFileName;
-        }
     }
 
     public class InputParameters

@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Azure.AI.TextAnalytics" Version="5.1.1" />
+    <PackageReference Include="Azure.Storage.Files.DataLake" Version="12.8.0" />
   </ItemGroup>
 
 </Project>

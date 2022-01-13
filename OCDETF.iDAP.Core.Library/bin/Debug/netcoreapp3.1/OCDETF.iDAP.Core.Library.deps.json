@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "OCDETF.iDAP.Core.Library/1.0.0": {
+        "runtime": {
+          "OCDETF.iDAP.Core.Library.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OCDETF.iDAP.Core.Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

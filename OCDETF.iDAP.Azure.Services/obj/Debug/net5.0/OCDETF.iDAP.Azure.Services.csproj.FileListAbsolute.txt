@@ -2,6 +2,7 @@ D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\bin\Debug\net5.0\OCDETF.iDA
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\bin\Debug\net5.0\OCDETF.iDAP.Azure.Services.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\bin\Debug\net5.0\ref\OCDETF.iDAP.Azure.Services.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\bin\Debug\net5.0\OCDETF.iDAP.Azure.Services.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Debug\net5.0\OCDETF.iDAP.Azure.Services.csproj.AssemblyReference.cache
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Debug\net5.0\OCDETF.iDAP.Azure.Services.GeneratedMSBuildEditorConfig.editorconfig
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Debug\net5.0\OCDETF.iDAP.Azure.Services.AssemblyInfoInputs.cache
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Debug\net5.0\OCDETF.iDAP.Azure.Services.AssemblyInfo.cs

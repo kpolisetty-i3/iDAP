@@ -9,6 +9,10 @@
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.13" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OCDETF.iDAP.Azure.Services\OCDETF.iDAP.Azure.Services.csproj" />
+    <ProjectReference Include="..\OCDETF.iDAP.Core.Library\OCDETF.iDAP.Core.Library.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

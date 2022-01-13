@@ -2,6 +2,7 @@ D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\net5.0\OCDETF.iDAP.
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\net5.0\OCDETF.iDAP.Core.Library.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\net5.0\ref\OCDETF.iDAP.Core.Library.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\net5.0\OCDETF.iDAP.Core.Library.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\net5.0\OCDETF.iDAP.Core.Library.csproj.AssemblyReference.cache
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\net5.0\OCDETF.iDAP.Core.Library.GeneratedMSBuildEditorConfig.editorconfig
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\net5.0\OCDETF.iDAP.Core.Library.AssemblyInfoInputs.cache
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\net5.0\OCDETF.iDAP.Core.Library.AssemblyInfo.cs
