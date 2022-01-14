@@ -12,19 +12,17 @@ namespace OCDETF.iDAP.Azure.Services
     {
         public CognitiveLanguage() { }
 
-        public string endpoint { get; set; }
-        public string key { get; set; }
+        private AzureKeyCredential  credentials { get; set; }
+        private TextAnalyticsClient client { get; set; }
 
         public CognitiveLanguage(string endpointUrl, string accessKey)
         {
-            this.endpoint = endpointUrl;
-            this.key = accessKey;
+            AzureKeyCredential credentials = new AzureKeyCredential(accessKey);
+            client = new TextAnalyticsClient(new Uri(endpointUrl), credentials);
         }
+
         public StringBuilder GetKeyPhrases(StringBuilder text)
         {
-
-            AzureKeyCredential credentials = new AzureKeyCredential(key);
-            var client = new TextAnalyticsClient(new Uri(endpoint), credentials);
             StringBuilder keyPhrases = new StringBuilder();
 
             var response = client.ExtractKeyPhrases(text.ToString());
@@ -38,22 +36,18 @@ namespace OCDETF.iDAP.Azure.Services
 
         public StringBuilder GetKeyEntitites(StringBuilder text)
         {
-            AzureKeyCredential credentials = new AzureKeyCredential(key);
-            var client = new TextAnalyticsClient(new Uri(endpoint), credentials);
             StringBuilder keyPhrases = new StringBuilder();
 
             var response = client.RecognizeEntities(text.ToString());
             foreach (CategorizedEntity keyphrase in response.Value)
             {
-                keyPhrases.AppendLine($" {keyphrase.Text} \t\t {keyphrase.ConfidenceScore} \t\t {keyphrase.Category} \t\t {keyphrase.SubCategory} ");
+                keyPhrases.Append($" {keyphrase.Text} - {keyphrase.Category},");
             }
             return keyPhrases;
         }
 
         public StringBuilder GetLinkedEntities(StringBuilder text)
         {
-            AzureKeyCredential credentials = new AzureKeyCredential(key);
-            var client = new TextAnalyticsClient(new Uri(endpoint), credentials);
             StringBuilder linkedEntities = new StringBuilder();
 
             var response = client.RecognizeLinkedEntities(text.ToString());

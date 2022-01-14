@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\OCDETF.iDAP.Azure.Services\OCDETF.iDAP.Azure.Services.csproj" />
     <ProjectReference Include="..\OCDETF.iDAP.Core.Library\OCDETF.iDAP.Core.Library.csproj" />
+    <ProjectReference Include="..\OCDETF.iDAP.Enron.Library\OCDETF.iDAP.Enron.Library.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

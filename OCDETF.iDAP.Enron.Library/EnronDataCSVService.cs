@@ -1,4 +1,5 @@
-﻿using OCDETF.iDAP.Core.Library;
+﻿using OCDETF.iDAP.Azure.Services;
+using OCDETF.iDAP.Core.Library;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -54,17 +55,15 @@ namespace OCDETF.iDAP.Enron.Library
 
         public EnronDataCSVService() { }
 
-        public void Process(string enronDataFolderPath, IList<string> folders, string outputDirectory)
+        public void Process(string enronDataFolderPath, string outputDirectory)
         {
-            List<string> lookupFolders = new List<string>() { "inbox", "sent" };
 
             List<string> allDirectories = Directory.GetDirectories(enronDataFolderPath).ToList();
 
             if (Directory.Exists(outputDirectory))
-            {
                 Directory.Delete(outputDirectory, true);
-                Directory.CreateDirectory(outputDirectory);
-            }
+
+            Directory.CreateDirectory(outputDirectory);
 
             string outputFolder = string.Empty;
             string previousOutputFolder = string.Empty;
@@ -72,25 +71,27 @@ namespace OCDETF.iDAP.Enron.Library
             IList<Dictionary<string, string>> records;
             foreach (string directory in allDirectories)
             {
-
                 records = new List<Dictionary<string, string>>();
                 outputFolder = Path.GetFileName(directory).Substring(0, 1);
 
                 if (!File.Exists(Path.Combine(outputDirectory, outputFolder + ".csv")))
+                {
                     new CSVService().WriteLine(Path.Combine(outputDirectory, outputFolder + ".csv"), $"{"Folder"}|{MSG_ID}|{DATE_C}|{FROM}|{TO}|{SUBJECT}|{CC}|{MIME}|{CONTENT_TYPE}|{CONTENT_ENCODING}|{BCC}|{X_FROM}|{X_TO}|{X_CC}|{X_BCC}|{X_FOLDER}|{X_ORIGIN}|{X_FILE}|{PHRASES}|{ENTITIES}|{LINKED_ENTITIES}");
-
+                }
 
                 records = ParseFile(directory, outputFolder);
+
                 WriteRecords(records, outputDirectory, outputFolder);
 
 
             }
         }
 
-
         private IList<Dictionary<string, string>> ParseFile(string directory, string folder)
         {
             IList<Dictionary<string, string>> records = new List<Dictionary<string, string>>();
+            //var cogServices = new CognitiveLanguage("https://idapv2-cognitive.cognitiveservices.azure.com/", "7a5f7b23e66748f2a32a1d84348605f8");
+
             Dictionary<string, string> rowValues = new Dictionary<string, string>();
             try
             {
@@ -122,9 +123,15 @@ namespace OCDETF.iDAP.Enron.Library
 
                         if (i == 16)
                         {
-                            StringBuilder sb = new StringBuilder(streamR.ReadToEnd());
+
+                            //StringBuilder sb = new StringBuilder(streamR.ReadToEnd());
+                            //if (sb.Length > 5000)
+                            //    sb = new StringBuilder(sb.ToString().Substring(0, 5000));
 
                             rowValues.Add("KeyPhrases", string.Empty);
+                            //if (folder == "c")
+                            //    rowValues.Add("KeyEntities", cogServices.GetKeyEntitites(sb).ToString());
+                            //else
                             rowValues.Add("KeyEntities", string.Empty);
                             rowValues.Add("LinkedEntities", string.Empty);
                             //rowValues.Add("KeyPhrases", new CognitiveLanguage(cog_endpoint, cog_key).GetKeyPhrases(sb).ToString());

@@ -22,7 +22,6 @@ namespace OCDETF.iDAP.Web.API.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
-            StorageSharedKeyCredential sharedKeyCredential = new StorageSharedKeyCredential(accountName, accountKey);
         }
 
         [HttpGet]

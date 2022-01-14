@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OCDETF.iDAP.Azure.Services\OCDETF.iDAP.Azure.Services.csproj" />
     <ProjectReference Include="..\OCDETF.iDAP.Core.Library\OCDETF.iDAP.Core.Library.csproj" />
   </ItemGroup>
 

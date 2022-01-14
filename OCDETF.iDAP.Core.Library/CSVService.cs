@@ -9,9 +9,10 @@ namespace OCDETF.iDAP.Core.Library
 
         public void WriteLine(string filePath, string header)
         {            
-            using (StreamWriter sw = File.AppendText(filePath))
+            using (StreamWriter sw = new StreamWriter(filePath, true))
             {                
                 sw.WriteLine(header);
+                sw.Close();
             }
         }      
     }

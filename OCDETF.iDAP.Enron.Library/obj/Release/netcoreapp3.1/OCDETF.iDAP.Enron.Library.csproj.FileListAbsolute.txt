@@ -1,0 +1,14 @@
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.deps.json
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Core.Library.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Core.Library.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.csproj.AssemblyReference.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.AssemblyInfoInputs.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.AssemblyInfo.cs
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.csproj.CoreCompileInputs.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.csproj.CopyComplete
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Enron.Library.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.pdb

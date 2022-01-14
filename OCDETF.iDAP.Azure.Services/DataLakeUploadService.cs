@@ -1,8 +1,11 @@
-﻿using Azure.Storage;
+﻿using Azure;
+using Azure.Storage;
 using Azure.Storage.Files.DataLake;
+using Azure.Storage.Files.DataLake.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -35,12 +38,38 @@ namespace OCDETF.iDAP.Core.Library
 
 
             DataLakeFileClient fileClient = directory.GetFileClient(Path.GetFileName(fileNamePath));
+            fileClient.DeleteIfExists();
             fileClient.CreateIfNotExists();
 
             FileStream fileStream = File.OpenRead(fileNamePath);
             long fileSize = fileStream.Length;
             fileClient.Append(fileStream, offset: 0);
             fileClient.Flush(position: fileSize);
+        }
+
+
+        public void Download(string container, string folder, string fileName)
+        {
+            StorageSharedKeyCredential keyCredentials = new StorageSharedKeyCredential(accountName, accountKey);
+            DataLakeServiceClient dataLakeServiceClient = new DataLakeServiceClient(new Uri(serviceURI), keyCredentials);
+
+            var dlContainer = dataLakeServiceClient.GetFileSystemClient(container.ToLower());
+
+            dlContainer.CreateIfNotExists();
+
+            var directory = dlContainer.GetDirectoryClient(folder.ToLower());
+            directory.CreateIfNotExists();
+
+
+            DataLakeFileClient fileClient = directory.GetFileClient(fileName);
+            Response<FileDownloadInfo> fileContents = fileClient.Read();
+
+           
+            using (Stream outStream = File.OpenWrite(Path.Combine(Path.GetTempPath(), fileName)))
+            {
+                fileContents.Value.Content.CopyTo(outStream);
+
+            }
         }
     }
 }

@@ -6,3 +6,4 @@ D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\O
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.csproj.CoreCompileInputs.cache
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Azure.Services\obj\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.csproj.AssemblyReference.cache

@@ -158,6 +158,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Azure.Services\\OCDETF.iDAP.Azure.Services.csproj": {
+                "projectPath": "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Azure.Services\\OCDETF.iDAP.Azure.Services.csproj"
+              },
               "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Core.Library\\OCDETF.iDAP.Core.Library.csproj": {
                 "projectPath": "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Core.Library\\OCDETF.iDAP.Core.Library.csproj"
               }

@@ -13,6 +13,8 @@ using Azure.Storage;
 using System.IO.Compression;
 using Azure.Storage.Files.DataLake.Models;
 using Azure;
+using OCDETF.iDAP.Core.Library;
+using OCDETF.iDAP.Enron.Library;
 
 namespace OCDETF.iDAP.Azure.Functions
 {
@@ -20,61 +22,42 @@ namespace OCDETF.iDAP.Azure.Functions
     {
         [FunctionName("ProcessEnronData")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-            string name = req.Query["name"];
 
+            //Comments
             string accountName = "kpidapv2";
             string accountKey = "L56P4ZOvy5zvYKCI/gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==";
             string serviceURI = "https://kpidapv2.blob.core.windows.net/";
+            string createFileName = string.Empty;
+            string result = string.Empty;
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             InputParameters data = JsonConvert.DeserializeObject<InputParameters>(requestBody);
 
-            string stagingDirectory = Path.GetTempPath();
-            string zipFilePath = Path.Combine(stagingDirectory, "enron-dataset.zip");
-
-            StorageSharedKeyCredential keyCredentials = new StorageSharedKeyCredential(accountName, accountKey);
-            DataLakeServiceClient dataLakeServiceClient = new DataLakeServiceClient(new Uri(serviceURI), keyCredentials);
-
-            var container = dataLakeServiceClient.GetFileSystemClient(data.appName.ToLower());
-            container.CreateIfNotExists();
-
-            var directory = container.GetDirectoryClient(data.category.ToLower());
-            directory.CreateIfNotExists();
-
-            DataLakeFileClient fileClient = directory.GetFileClient("enron-dataset.zip");
-
-            Response<FileDownloadInfo> downloadResponse = fileClient.Read();
-
-            BinaryReader reader = new BinaryReader(downloadResponse.Value.Content);
-
-            FileStream fileStream = File.OpenWrite(zipFilePath);
-
-            int bufferSize = 4096;
-
-            byte[] buffer = new byte[bufferSize];
-            int count;
-
-            while ((count = reader.Read(buffer, 0, buffer.Length)) != 0)
+            try
             {
-                fileStream.Write(buffer, 0, count);
+
+                new DataLakeUploadService(accountName, accountKey, serviceURI).Download(data.appName, data.category, data.query);
+                ZipFile.ExtractToDirectory(Path.Combine(Path.GetTempPath(), data.query), Path.GetTempPath());
+
+                string inputDirectory = Path.Combine(Path.GetTempPath(), "2018487913", "maildir");
+                string outputDirectory = Path.Combine(Path.GetTempPath(), "2018487913", "Output");
+
+                new EnronDataCSVService().Process(inputDirectory, outputDirectory);
+
+                foreach (string file in Directory.GetFiles(outputDirectory))
+                    new DataLakeUploadService(accountName, accountKey, serviceURI).Upload(data.appName, data.category, file);
+            }
+            catch (Exception e)
+            {
+
+                result = $" {data.appName} {data.category} {data.query} {e.StackTrace} {Path.GetTempPath()} {e.Message}";
             }
 
-            await fileStream.FlushAsync();
-
-            fileStream.Close();
-
-            ZipFile.ExtractToDirectory(zipFilePath, Path.GetTempPath());
-            
-
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {Directory.Exists(Path.Combine(Path.GetTempPath(), "2018487913", "maildir"))}. This HTTP triggered function executed successfully and unzipped.";
-
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(result);
         }
 
     }
