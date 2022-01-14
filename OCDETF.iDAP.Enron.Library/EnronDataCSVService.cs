@@ -124,15 +124,18 @@ namespace OCDETF.iDAP.Enron.Library
                         if (i == 16)
                         {
 
-                            //StringBuilder sb = new StringBuilder(streamR.ReadToEnd());
-                            //if (sb.Length > 5000)
-                            //    sb = new StringBuilder(sb.ToString().Substring(0, 5000));
+                            
 
                             rowValues.Add("KeyPhrases", string.Empty);
                             //if (folder == "c")
+                            //{
+                            //    StringBuilder sb = new StringBuilder(streamR.ReadToEnd());
+                            //    if (sb.Length > 5000)
+                            //        sb = new StringBuilder(sb.ToString().Substring(0, 5000));
                             //    rowValues.Add("KeyEntities", cogServices.GetKeyEntitites(sb).ToString());
+                            //}                                
                             //else
-                            rowValues.Add("KeyEntities", string.Empty);
+                                rowValues.Add("KeyEntities", string.Empty);
                             rowValues.Add("LinkedEntities", string.Empty);
                             //rowValues.Add("KeyPhrases", new CognitiveLanguage(cog_endpoint, cog_key).GetKeyPhrases(sb).ToString());
                             //rowValues.Add("KeyEntities", new CognitiveLanguage(cog_endpoint, cog_key).GetKeyEntitites(sb).ToString());
