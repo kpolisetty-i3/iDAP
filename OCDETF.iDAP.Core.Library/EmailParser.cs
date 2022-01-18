@@ -10,7 +10,7 @@ namespace OCDETF.iDAP.Core.Library
     {
         public EmailParser() { }
 
-        public void Parse(string zipFilePath, string workingFolder, int partitions, IEmailWriter writer)
+        public void Parse(string zipFilePath, string workingFolder, int partitions, IEmailOutputWriter writer)
         {
             EmailFileParser emailFileParser = new EmailFileParser();
             IList<Dictionary<string,string>> records = new List<Dictionary<string, string>>();

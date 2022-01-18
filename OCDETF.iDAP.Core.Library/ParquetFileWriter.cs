@@ -8,7 +8,7 @@ using System.Text;
 
 namespace OCDETF.iDAP.Core.Library
 {
-    public class ParquetFileWriter : IEmailWriter
+    public class ParquetFileWriter : IEmailOutputWriter
     {
         public ParquetFileWriter() { }
 
