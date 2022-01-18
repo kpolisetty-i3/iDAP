@@ -6,4 +6,3 @@ D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDET
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.csproj.CoreCompileInputs.cache
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.pdb
-D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.csproj.AssemblyReference.cache

@@ -150,6 +150,9 @@
         }
       },
       "OCDETF.iDAP.Core.Library/1.0.0": {
+        "dependencies": {
+          "Parquet.Net": "3.9.1"
+        },
         "runtime": {
           "OCDETF.iDAP.Core.Library.dll": {}
         }

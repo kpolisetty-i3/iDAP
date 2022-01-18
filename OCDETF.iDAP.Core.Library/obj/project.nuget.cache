@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1cBTuU/UFsCLANuIIu5Vv8JNSmWdeu18C7HEzZL+OhC9rbJeHYsJM7SHqavhqaT+U3t0nGw4JXctfOJkSZw+tw==",
+  "dgSpecHash": "n6chhy5B8yTHeWyezRht6cPRnUikxahyc3cyNOzaANnWQoxavSm5OsvAu7mU1RUiTWKbNgwX5jlkOO3HANhKIA==",
   "success": true,
   "projectFilePath": "D:\\SourceControl\\Git\\iDAP\\OCDETF.iDAP.Core.Library\\OCDETF.iDAP.Core.Library.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\polis\\.nuget\\packages\\ironsnappy\\1.3.0\\ironsnappy.1.3.0.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\parquet.net\\3.9.1\\parquet.net.3.9.1.nupkg.sha512",
+    "C:\\Users\\polis\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
   "logs": []
 }
