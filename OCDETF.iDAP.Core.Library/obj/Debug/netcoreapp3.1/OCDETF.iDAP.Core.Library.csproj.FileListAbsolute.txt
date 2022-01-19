@@ -1,8 +1,12 @@
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.deps.json
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\netcoreapp3.1\OCDETF.iDAP.Azure.Services.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Debug\netcoreapp3.1\OCDETF.iDAP.Azure.Services.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.csproj.AssemblyReference.cache
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.AssemblyInfoInputs.cache
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.AssemblyInfo.cs
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.csproj.CoreCompileInputs.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.csproj.CopyComplete
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.Library.pdb

@@ -45,6 +45,7 @@ namespace OCDETF.iDAP.Core.Library
             long fileSize = fileStream.Length;
             fileClient.Append(fileStream, offset: 0);
             fileClient.Flush(position: fileSize);
+            fileStream.Close();
         }
 
 

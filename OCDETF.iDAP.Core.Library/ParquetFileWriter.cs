@@ -39,6 +39,7 @@ namespace OCDETF.iDAP.Core.Library
                         
                     }
                 }
+                fileStream.Close();
             }
         }
 

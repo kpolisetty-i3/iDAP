@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Text;
 
 namespace OCDETF.iDAP.Core.Library
@@ -10,10 +11,10 @@ namespace OCDETF.iDAP.Core.Library
     {
         public EmailParser() { }
 
-        public void Parse(string zipFilePath, string workingFolder, int partitions, IEmailOutputWriter writer)
+        public void Parse(string zipFilePath, string workingFolder, int partitions, IEmailOutputWriter writer, IDataTransfer dataTransfer)
         {
             EmailFileParser emailFileParser = new EmailFileParser();
-            IList<Dictionary<string,string>> records = new List<Dictionary<string, string>>();
+            IList<Dictionary<string, string>> records = new List<Dictionary<string, string>>();
 
             using (ZipArchive archive = ZipFile.OpenRead(zipFilePath))
             {
@@ -23,6 +24,7 @@ namespace OCDETF.iDAP.Core.Library
 
                 double partitionRecordCount = totalCount / partitions;
                 partitionRecordCount = Math.Ceiling(partitionRecordCount);
+
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
 
@@ -31,17 +33,20 @@ namespace OCDETF.iDAP.Core.Library
                     var result = int.TryParse(fileName, out outValue);
                     if (result)
                     {
-                        entry.ExtractToFile(Path.Combine(workingFolder, fileName),true);
-                        var record = emailFileParser.ProcessFile(Path.Combine(workingFolder, fileName), entry.FullName);                        
+                        entry.ExtractToFile(Path.Combine(workingFolder, fileName), true);
+                        var record = emailFileParser.ProcessFile(Path.Combine(workingFolder, fileName), entry.FullName);
                         records.Add(record);
                         File.Delete(Path.Combine(workingFolder, fileName));
                         counter++;
                     }
-                    
+
                     if (counter > partitionRecordCount)
                     {
                         writer.Write(Path.Combine(workingFolder, $"Partition{partition}.parquet"), records);
-                        counter = 0;partition++;
+                        dataTransfer.Transfer(Path.Combine(workingFolder, $"Partition{partition}.parquet"));
+                        File.Delete(Path.Combine(workingFolder, $"Partition{partition}.parquet"));
+
+                        counter = 0; partition++;
                         records = new List<Dictionary<string, string>>();
                     }
 

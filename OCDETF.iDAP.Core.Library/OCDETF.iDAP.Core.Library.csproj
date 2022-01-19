@@ -8,4 +8,8 @@
     <PackageReference Include="Parquet.Net" Version="3.9.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OCDETF.iDAP.Azure.Services\OCDETF.iDAP.Azure.Services.csproj" />
+  </ItemGroup>
+
 </Project>

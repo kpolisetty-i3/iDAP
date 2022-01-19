@@ -65,7 +65,12 @@ namespace OCDETF.iDAP.Enron.Load.Console
         static void Main(string[] args)
         {
 
-            new EmailParser().Parse(@"D:\enron\enron_dataset.zip", @"d:\enron\output",6, new ParquetFileWriter());
+            new EmailParser().Parse(@"D:\enron\enron_dataset.zip", @"d:\enron\output",6, new ParquetFileWriter(), 
+                new DataLakeTransfer("kpidapv2", 
+                "L56P4ZOvy5zvYKCI /gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==", 
+                "https://kpidapv2.blob.core.windows.net/",
+                "idapv2",
+                "enron"));
         }
 
 

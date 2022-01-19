@@ -151,6 +151,7 @@
       },
       "OCDETF.iDAP.Core.Library/1.0.0": {
         "dependencies": {
+          "OCDETF.iDAP.Azure.Services": "1.0.0",
           "Parquet.Net": "3.9.1"
         },
         "runtime": {
