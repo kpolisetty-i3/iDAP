@@ -64,13 +64,15 @@ namespace OCDETF.iDAP.Enron.Load.Console
 
         static void Main(string[] args)
         {
-
-            new EmailParser().Parse(@"D:\enron\enron_dataset.zip", @"d:\enron\output",6, new ParquetFileWriter(), 
-                new DataLakeTransfer("kpidapv2", 
-                "L56P4ZOvy5zvYKCI /gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==", 
+            new EmailParser().Parse(@"D:\enron\enron_dataset.zip", @"d:\enron\output", 20, new ParquetFileWriter(),
+                new DataLakeTransfer("kpidapv2",
+                "L56P4ZOvy5zvYKCI /gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==",
                 "https://kpidapv2.blob.core.windows.net/",
                 "idapv2",
                 "enron"));
+
+            //var result = new SpacyService("http://52.234.172.240/ent").GetEntities("Pastafarians are smarter than people with Coca Cola bottles.");
+
         }
 
 

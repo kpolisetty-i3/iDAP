@@ -63,14 +63,29 @@ namespace OCDETF.iDAP.Core.Library
 
 
             DataLakeFileClient fileClient = directory.GetFileClient(fileName);
-            Response<FileDownloadInfo> fileContents = fileClient.Read();
 
-           
-            using (Stream outStream = File.OpenWrite(Path.Combine(Path.GetTempPath(), fileName)))
+            Response<FileDownloadInfo> downloadResponse = fileClient.Read();
+
+            BinaryReader reader = new BinaryReader(downloadResponse.Value.Content);
+
+            FileStream fileStream =
+                File.OpenWrite(Path.Combine(@"C:\home\output\", fileName));
+
+            int bufferSize = 4096;
+
+            byte[] buffer = new byte[bufferSize];
+
+            int count;
+
+            while ((count = reader.Read(buffer, 0, buffer.Length)) != 0)
             {
-                fileContents.Value.Content.CopyTo(outStream);
-
+                fileStream.Write(buffer, 0, count);
             }
+
+            fileStream.Flush();
+
+            fileStream.Close();
         }
+
     }
 }

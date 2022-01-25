@@ -29,8 +29,7 @@ namespace OCDETF.iDAP.Core.Library
                 {
 
                     var fileName = Path.GetFileName(entry.FullName);
-                    int outValue = 0;
-                    var result = int.TryParse(fileName, out outValue);
+                    var result = int.TryParse(fileName, out int outValue);
                     if (result)
                     {
                         entry.ExtractToFile(Path.Combine(workingFolder, fileName), true);
@@ -53,33 +52,6 @@ namespace OCDETF.iDAP.Core.Library
                 }
             }
 
-        }
-
-        private IList<ZipArchiveEntry> ProcessFiles(string zipFilePath, string workingFolder)
-        {
-            IList<ZipArchiveEntry> processFiles = new List<ZipArchiveEntry>();
-
-
-            EmailFileParser emailFileParser = new EmailFileParser();
-            using (ZipArchive archive = ZipFile.OpenRead(zipFilePath))
-            {
-                foreach (ZipArchiveEntry entry in archive.Entries)
-                {
-                    var fileName = Path.GetFileName(entry.FullName);
-                    int outValue = 0;
-                    var result = int.TryParse(fileName, out outValue);
-                    if (result)
-                    {
-                        processFiles.Add(entry);
-
-                        entry.ExtractToFile(Path.Combine(workingFolder, fileName));
-                        var result2 = emailFileParser.ProcessFile(Path.Combine(workingFolder, fileName), entry.FullName);
-                        File.Delete(Path.Combine(workingFolder, fileName));
-                    }
-
-                }
-            }
-            return processFiles;
         }
     }
 }

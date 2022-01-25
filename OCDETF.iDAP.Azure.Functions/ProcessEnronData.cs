@@ -39,17 +39,21 @@ namespace OCDETF.iDAP.Azure.Functions
 
             try
             {
+                if (!Directory.Exists(@"C:\home\output"))
+                    Directory.CreateDirectory(@"C:\home\output");
 
                 new DataLakeUploadService(accountName, accountKey, serviceURI).Download(data.appName, data.category, data.query);
-                ZipFile.ExtractToDirectory(Path.Combine(Path.GetTempPath(), data.query), Path.GetTempPath());
 
-                string inputDirectory = Path.Combine(Path.GetTempPath(), "2018487913", "maildir");
-                string outputDirectory = Path.Combine(Path.GetTempPath(), "2018487913", "Output");
+                //string workingFolder = Path.Combine(@"C:\home", "Output");
+                //string zipFileName = Path.Combine(@"C:\home\Output", data.query);
 
-                new EnronDataCSVService().Process(inputDirectory, outputDirectory);
+                //new EmailParser().Parse(zipFileName, workingFolder, 6, new ParquetFileWriter(),
+                //    new DataLakeTransfer("kpidapv2",
+                //    "L56P4ZOvy5zvYKCI /gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==",
+                //    "https://kpidapv2.blob.core.windows.net/",
+                //    "idapv2",
+                //    "enron"));
 
-                foreach (string file in Directory.GetFiles(outputDirectory))
-                    new DataLakeUploadService(accountName, accountKey, serviceURI).Upload(data.appName, data.category, file);
             }
             catch (Exception e)
             {

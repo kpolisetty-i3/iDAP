@@ -34,13 +34,18 @@ namespace OCDETF.iDAP.Core.API.Controllers
                 }
                 else
                 {
+                    
                     Uri requestUri = new Uri(data.apiURL);
                     createFileName = Path.GetFileName(requestUri.OriginalString);
+
                     if(!string.IsNullOrEmpty(requestUri.Query))
                         createFileName = Path.GetFileName(requestUri.OriginalString.Replace(requestUri.Query, string.Empty));
+
                     new DownloadService().Download(data.apiURL, Path.Combine(Path.GetTempPath(), createFileName));
 
                     new DataLakeUploadService(accountName, accountKey, serviceURI).Upload(data.appName, data.category, Path.Combine(Path.GetTempPath(), createFileName));
+
+                    System.IO.File.Delete(Path.Combine(Path.GetTempPath(), createFileName));
                     result = $"Hello, This HTTP triggered function executed successfully created {createFileName} from {data.apiURL}, {data.appName}, {data.category} {Path.Combine(Path.GetTempPath(), createFileName)}!!";
                 }
             }

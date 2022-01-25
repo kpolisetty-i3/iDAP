@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
+using System.Linq;
+using OCDETF.iDAP.Core.Library.NLP;
 
 namespace OCDETF.iDAP.Core.Library
 {
     public class EmailFileParser
     {
-        static string MSG_ID = "Message-ID:";
-        static string DATE_C = "Date:";
-        static string FROM = "From:";
-        static string TO = "To:";
-        static string SUBJECT = "Subject:";
-        static string CC = "Cc:";
-        static string MIME = "Mime-Version:";
-        static string CONTENT_TYPE = "Content-Type:";
-        static string CONTENT_ENCODING = "Content-Transfer-Encoding:";
-        static string BCC = "Bcc:";
-        static string X_FROM = "X-From:";
-        static string X_TO = "X-To:";
-        static string X_CC = "X-cc:";
-        static string X_BCC = "X-bcc:";
-        static string X_FOLDER = "X-Folder:";
-        static string X_ORIGIN = "X-Origin:";
-        static string X_FILE = "X-FileName:";
-        static string BODY = "X-FileName:";
-        static string PHRASES = "KeyPhrases";
-        static string ENTITIES = "KeyEntities";
-        static string LINKED_ENTITIES = "LinkedEntities";
+        static readonly string MSG_ID = "Message-ID:";
+        static readonly string DATE_C = "Date:";
+        static readonly string FROM = "From:";
+        static readonly string TO = "To:";
+        static readonly string SUBJECT = "Subject:";
+        static readonly string CC = "Cc:";
+        static readonly string MIME = "Mime-Version:";
+        static readonly string CONTENT_TYPE = "Content-Type:";
+        static readonly string CONTENT_ENCODING = "Content-Transfer-Encoding:";
+        static readonly string BCC = "Bcc:";
+        static readonly string X_FROM = "X-From:";
+        static readonly string X_TO = "X-To:";
+        static readonly string X_CC = "X-cc:";
+        static readonly string X_BCC = "X-bcc:";
+        static readonly string X_FOLDER = "X-Folder:";
+        static readonly string X_ORIGIN = "X-Origin:";
+        static readonly string X_FILE = "X-FileName:";
+
 
         static List<string> messageAttributesOrder = new List<string>()
             {
@@ -50,7 +49,7 @@ namespace OCDETF.iDAP.Core.Library
                 ,X_ORIGIN
                 ,X_FILE
             };
-        private string contents { get; set; }
+
         public EmailFileParser()
         {
         }
@@ -66,12 +65,12 @@ namespace OCDETF.iDAP.Core.Library
 
             return returnValue;
         }
-        
 
-        public Dictionary<string,string> ProcessFile(string file, string folder)
+
+        public Dictionary<string, string> ProcessFile(string file, string folder)
         {
             Dictionary<string, string> rowValues = new Dictionary<string, string>();
-
+            SpacyProcessor spacyService = new SpacyProcessor("http://localhost:8080/ent");
             StreamReader streamR = new StreamReader(file);
             string currentLine = streamR.ReadLine();
             for (int i = 0; i < messageAttributesOrder.Count; i++)
@@ -93,19 +92,57 @@ namespace OCDETF.iDAP.Core.Library
                 }
                 rowValues.Add(messageAttributesOrder[i], currentValue);
 
-                if (i == messageAttributesOrder.Count-1)
+                if (i == messageAttributesOrder.Count - 1)
                 {
+
                     rowValues.Add("Body", streamR.ReadToEnd());
-                    rowValues.Add("KeyPhrases", string.Empty);
-                    rowValues.Add("KeyEntities", string.Empty);
+                    var entities = spacyService.GetEntities(rowValues["Body"]);
+                    rowValues.Add("KeyPersons", GetPersons(entities));
+                    rowValues.Add("KeyOrgs", GetOrgs(entities));
                     rowValues.Add("LinkedEntities", string.Empty);
                 }
             }
             //get mail folderpath. eg., allen-p/inbox, allen-p/sent, allen-p/sent-items
             rowValues.Add("Folder", folder);
-            
+
             streamR.Close();
             return rowValues;
+        }
+
+        private string GetOrgs(IList<NLPResult> list)
+        {
+            StringBuilder result = new StringBuilder();
+            if (list.Count > 0)
+            {
+                var filter = list.Where(sel => sel.Type == "ORG" ).ToList();
+                foreach (NLPResult avalue in filter)
+                {
+                    result.Append($"{avalue.Text}, ");
+                }
+                return result.ToString().Trim();
+            }
+            else
+                return string.Empty;
+
+        }
+
+        private string GetPersons(IList<NLPResult> list)
+        {
+            StringBuilder result = new StringBuilder();
+            if (list.Count > 0)
+            {
+                var filter = list.Where(sel => sel.Type == "PERSON" || sel.Type == "NORP").ToList();
+                foreach (NLPResult avalue in filter)
+                {
+                    result.Append($"{avalue.Text} - ");
+                }
+                return result.ToString().Trim();
+            }
+            else
+                return string.Empty;
+
+
+
         }
     }
 }

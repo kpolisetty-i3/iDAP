@@ -11,6 +11,7 @@ D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\netcoreapp3.1
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\netcoreapp3.1\Azure.Storage.Files.DataLake.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\netcoreapp3.1\IronSnappy.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\netcoreapp3.1\Parquet.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\netcoreapp3.1\System.Memory.Data.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Enron.Load.Console\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll

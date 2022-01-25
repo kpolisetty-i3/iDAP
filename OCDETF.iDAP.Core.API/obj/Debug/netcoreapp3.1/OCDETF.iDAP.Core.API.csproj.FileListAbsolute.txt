@@ -36,3 +36,4 @@ D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.API\obj\Debug\netcoreapp3.1\OCDETF.iD
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.API\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.API.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.API\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.API.pdb
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.API\obj\Debug\netcoreapp3.1\OCDETF.iDAP.Core.API.genruntimeconfig.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

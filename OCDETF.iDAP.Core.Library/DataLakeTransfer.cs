@@ -6,11 +6,11 @@ namespace OCDETF.iDAP.Core.Library
 {
     public class DataLakeTransfer : IDataTransfer
     {
-        private string endpoint;
-        private string key;
-        private string account;
-        private string container;
-        private string folder;
+        private readonly string endpoint;
+        private readonly string key;
+        private readonly string account;
+        private readonly string container;
+        private readonly string folder;
 
 
         public DataLakeTransfer(string acct, string accesskey, string endpointuri, string container, string folder)

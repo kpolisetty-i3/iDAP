@@ -30,17 +30,21 @@ namespace OCDETF.iDAP.Core.API.Controllers
 
             try
             {
+                string workingFolder = @"C:\Home";
+                workingFolder = Path.Combine(workingFolder, "Output");
+                if (!Directory.Exists(workingFolder))
+                    Directory.CreateDirectory(workingFolder);
 
                 new DataLakeUploadService(accountName, accountKey, serviceURI).Download(data.appName, data.category, data.query);
-                ZipFile.ExtractToDirectory(Path.Combine(Path.GetTempPath(), data.query), Path.GetTempPath());
+                
+                string zipFileName = Path.Combine(workingFolder, data.query);
 
-                string inputDirectory = Path.Combine(Path.GetTempPath(), "2018487913", "maildir");
-                string outputDirectory = Path.Combine(Path.GetTempPath(), "2018487913", "Output");
-
-                new EnronDataCSVService().Process(inputDirectory, outputDirectory);
-
-                foreach (string file in Directory.GetFiles(outputDirectory))
-                    new DataLakeUploadService(accountName, accountKey, serviceURI).Upload(data.appName, data.category, file);
+                new EmailParser().Parse(zipFileName, workingFolder, 6, new ParquetFileWriter(),
+                    new DataLakeTransfer("kpidapv2",
+                    "L56P4ZOvy5zvYKCI /gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==",
+                    "https://kpidapv2.blob.core.windows.net/",
+                    "idapv2",
+                    "enron"));
             }
             catch (Exception e)
             {
@@ -52,6 +56,6 @@ namespace OCDETF.iDAP.Core.API.Controllers
         }
 
 
-        
+
     }
 }

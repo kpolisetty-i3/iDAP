@@ -7,3 +7,6 @@ D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Release\netcoreapp3.1\OCD
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Core.Library.dll
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Core.Library.pdb
 D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Core.Library.csproj.AssemblyReference.cache
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.dll
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\bin\Release\netcoreapp3.1\OCDETF.iDAP.Azure.Services.pdb
+D:\SourceControl\Git\iDAP\OCDETF.iDAP.Core.Library\obj\Release\netcoreapp3.1\OCDETF.iDAP.Core.Library.csproj.CopyComplete
