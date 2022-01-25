@@ -27,7 +27,6 @@ namespace OCDETF.iDAP.Core.Library
 
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
-
                     var fileName = Path.GetFileName(entry.FullName);
                     var result = int.TryParse(fileName, out int outValue);
                     if (result)
