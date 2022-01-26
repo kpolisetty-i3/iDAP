@@ -4,8 +4,10 @@ using System.Text;
 
 namespace OCDETF.iDAP.Core.Library.PDF
 {
-    interface IPDFProvider
+    public interface IPDFProvider
     {
         string GetContents(int pageNumber);
+
+        int GetPageCount();
     }
 }

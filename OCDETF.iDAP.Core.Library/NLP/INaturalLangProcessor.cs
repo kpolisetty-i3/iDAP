@@ -10,5 +10,9 @@ namespace OCDETF.iDAP.Core.Library.NLP
         string GetOrgs(IList<NLPResult> entities);
         IList<NLPResult> GetAll(string text);
 
+        HashSet<string> GetPersons(string content);
+
+        HashSet<string> GetOrgs(string content);
+
     }
 }

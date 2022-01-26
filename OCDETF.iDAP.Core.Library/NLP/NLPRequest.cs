@@ -6,7 +6,7 @@ namespace OCDETF.iDAP.Core.Library.NLP
 {
     public class NLPRequest
     {
-        public string Text { get; set; }
-        public string Model { get; set; }
+        public string text { get; set; }
+        public string model { get; set; }
     }
 }

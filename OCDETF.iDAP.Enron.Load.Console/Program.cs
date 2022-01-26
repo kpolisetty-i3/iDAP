@@ -1,5 +1,7 @@
 ﻿using OCDETF.iDAP.Azure.Services;
 using OCDETF.iDAP.Core.Library;
+using OCDETF.iDAP.Core.Library.Office;
+using OCDETF.iDAP.Core.Library.PDF;
 using OCDETF.iDAP.Enron.Library;
 using Parquet;
 using Parquet.Data;
@@ -64,17 +66,20 @@ namespace OCDETF.iDAP.Enron.Load.Console
 
         static void Main(string[] args)
         {
-            new EmailParser().Parse(@"D:\enron\enron_dataset.zip", @"d:\enron\output", 20, new ParquetFileWriter(),
-                new DataLakeTransfer("kpidapv2",
+            //new EmailParser().Parse(@"D:\enron\enron_dataset.zip", @"d:\enron\output", 20, new ParquetFileWriter(),
+            //    new DataLakeTransfer("kpidapv2",
+            //    "L56P4ZOvy5zvYKCI /gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==",
+            //    "https://kpidapv2.blob.core.windows.net/",
+            //    "idapv2",
+            //    "enron"));
+
+            //var result = new SpacyProcessor("http://localhost:8080/ent").GetEntities("Pastafarians are smarter than people with Coca Cola bottles.");
+
+            //IList<StringBuilder> list = new WordDocument().Read(@"D:\enron\output\test.docx");
+
+            new PDFNLPProcessor("kpidapv2",
                 "L56P4ZOvy5zvYKCI /gv4iHHNrr3ggiy1EQgop2oijh3T9lU7nHK2MqMBvE9TIH0N2vG8S6mtYkl79EtL2QaiPA==",
-                "https://kpidapv2.blob.core.windows.net/",
-                "idapv2",
-                "enron"));
-
-            //var result = new SpacyService("http://52.234.172.240/ent").GetEntities("Pastafarians are smarter than people with Coca Cola bottles.");
-
-
-
+                "https://kpidapv2.blob.core.windows.net/", new Core.Library.Models.InputParameters() { appName = "idapv2", category = "public", spacyEndpointURL = "http://idapv2spacy.eastus.azurecontainer.io/ent" }).Process();
         }
 
 

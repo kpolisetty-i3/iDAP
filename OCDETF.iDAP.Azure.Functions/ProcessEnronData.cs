@@ -15,6 +15,7 @@ using Azure.Storage.Files.DataLake.Models;
 using Azure;
 using OCDETF.iDAP.Core.Library;
 using OCDETF.iDAP.Enron.Library;
+using OCDETF.iDAP.Core.Library.Models;
 
 namespace OCDETF.iDAP.Azure.Functions
 {
@@ -66,12 +67,5 @@ namespace OCDETF.iDAP.Azure.Functions
 
     }
 
-    public class InputParameters
-    {
-        public string apiURL { get; set; }
-        public string appName { get; set; }
-        public string category { get; set; }
-        public string authorization { get; set; }
-        public string query { get; set; }
-    }
+    
 }

@@ -11,6 +11,7 @@ namespace OCDETF.iDAP.Core.Library
     public class SpacyProcessor : INaturalLangProcessor
     {
         public string EndpointUrl { get; set; }
+        public string spacy_model = "en_core_web_md";
 
         public SpacyProcessor(string endpoint)
         {
@@ -21,7 +22,7 @@ namespace OCDETF.iDAP.Core.Library
 
         public IList<NLPResult> GetEntities(string text)
         {
-            var json = new NLPRequest() { Model = "en", Text = text };
+            var json = new NLPRequest() { model = spacy_model, text = text };
             var returnValue = new List<NLPResult>();
             using (var content = new StringContent(JsonConvert.SerializeObject(json), System.Text.Encoding.UTF8, "application/json"))
             {
@@ -72,7 +73,7 @@ namespace OCDETF.iDAP.Core.Library
 
         public IList<NLPResult> GetAll(string text)
         {
-            var json = new NLPRequest() { Model = "en", Text = text };
+            var json = new NLPRequest() { model = spacy_model, text = text };
             var returnValue = new List<NLPResult>();
 
             using (var content = new StringContent(JsonConvert.SerializeObject(json), System.Text.Encoding.UTF8, "application/json"))
@@ -88,6 +89,38 @@ namespace OCDETF.iDAP.Core.Library
                 }
                 return returnValue;
             }
+        }
+
+        public HashSet<string> GetPersons(string content)
+        {
+            IList<NLPResult> entities = GetEntities(content);
+            StringBuilder result = new StringBuilder();
+            HashSet<string> persons = new HashSet<string>();
+            if (entities.Count > 0)
+            {
+                var filter = entities.Where(sel => sel.Type == "PERSON").ToList();
+                foreach (NLPResult avalue in filter)
+                    persons.Add(avalue.Text.Trim().Replace("\n", string.Empty));
+                //result.AppendLine($"{avalue.Text}");                                    
+                return persons;
+            }
+            return persons;
+        }
+
+        public HashSet<string> GetOrgs(string content)
+        {
+            IList<NLPResult> entities = GetEntities(content);
+            StringBuilder result = new StringBuilder();
+            HashSet<string> orgs = new HashSet<string>();
+            if (entities.Count > 0)
+            {
+                var filter = entities.Where(sel => sel.Type == "ORG").ToList();
+                foreach (NLPResult avalue in filter)
+                    orgs.Add(avalue.Text.Trim().Replace("\n", string.Empty));
+                //result.AppendLine($"{avalue.Text}");                                    
+                return orgs;
+            }
+            return orgs;
         }
     }
 }

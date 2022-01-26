@@ -191,6 +191,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.15.0, )"
+            },
             "Parquet.Net": {
               "target": "Package",
               "version": "[3.9.1, )"
